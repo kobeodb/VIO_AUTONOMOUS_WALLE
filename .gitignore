@@ -1,0 +1,9 @@
+build/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+tmp/
+data/*
+*.bag
+*.db3
