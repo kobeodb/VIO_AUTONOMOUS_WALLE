@@ -1,0 +1,25 @@
+{
+  "date": "2026-08-25T21:04:00.031854+02:00",
+  "data": {
+    "/Users/kobe/Documents/personal-projects/VIO_AUTONOMOUS_WALLE/CMakeLists.txt": [
+      {
+        "label": "CMAKE_CXX_STANDARD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /Users/kobe/Documents/personal-projects/VIO_AUTONOMOUS_WALLE/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_CXX_STANDARD_REQUIRED",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /Users/kobe/Documents/personal-projects/VIO_AUTONOMOUS_WALLE/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_CXX_EXTENSIONS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /Users/kobe/Documents/personal-projects/VIO_AUTONOMOUS_WALLE/CMakeLists.txt"
+      }
+    ]
+  }
+}
