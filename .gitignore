@@ -7,3 +7,4 @@ tmp/
 data/*
 *.bag
 *.db3
+.cache/
