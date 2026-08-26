@@ -4,6 +4,7 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        clang-format-18 \
         ninja-build \
         python3 \
         python3-pip \

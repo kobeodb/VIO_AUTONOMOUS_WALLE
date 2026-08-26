@@ -1,5 +1,5 @@
-#include <iostream>
 #include "vio/project.hpp"
+#include <iostream>
 
 int main() {
     if (vio::project_name() != "VIO Autonomous WALL-E") {
