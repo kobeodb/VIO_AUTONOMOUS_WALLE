@@ -2,15 +2,12 @@
 
 set -euo pipefail
 
-CPP_FILES=(
-    cpp/include/vio/project.hpp
-    cpp/src/project.cpp
-    cpp/apps/vio_smoke.cpp
-    tests/cpp/test_project.cpp
-)
-
 echo "Checking C++ formatting..."
-clang-format-18 --dry-run --Werror "${CPP_FILES[@]}"
+find cpp tests/cpp \
+    -type f \
+    \( -name "*.cpp" -o -name "*.hpp" -o -name "*.cc" -o -name "*.h" \) \
+    -print0 \
+    | xargs -0 -r clang-format-18 --dry-run --Werror
 
 echo "Checking python linting..."
 ruff check python tests/python
