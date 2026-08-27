@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+BUILD_DIR="${BUILD_DIR:-/tmp/vio-build}"
+
+export RUFF_CACHE_DIR="${RUFF_CACHE_DIR:-/tmp/ruff-cache}"
+export PYTHONDONTWRITEBYTECODE=1
+
 echo "Checking C++ formatting..."
 find cpp tests/cpp \
     -type f \
@@ -16,16 +21,16 @@ echo "Checking python formatting..."
 ruff format --check python tests/python
 
 echo "Configuring C++ project..."
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+cmake -S . -B "$BUILD_DIR" -G Ninja -DCMAKE_BUILD_TYPE=Debug
 
 echo "Building C++ targets..."
-cmake --build build
+cmake --build "$BUILD_DIR"
 
 echo "Running C++ tests..."
-ctest --test-dir build --output-on-failure
+ctest --test-dir "$BUILD_DIR" --output-on-failure
 
 echo "Running C++ executable..."
-./build/cpp/vio_smoke
+"$BUILD_DIR/cpp/vio_smoke"
 
 echo "Running Python tests..."
 PYTHONPATH=python python3 -m unittest discover \
